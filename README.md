@@ -81,7 +81,6 @@ belongs_to :tag_name
 ```
 
 ### table
-- content
 - prototype_id
 - tag_name_id
 
