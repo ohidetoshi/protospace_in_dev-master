@@ -34,7 +34,7 @@ class PrototypesController < ApplicationController
   def update
       prototype = Prototype.find(params[:id])
       prototype.update(prototype_params) if prototype.user_id == current_user.id
-      redirect_to :root, notice: 'Prototype was successfully edited'
+      redirect_to prototype_path, notice: 'Prototype was successfully edited'
   end
 
   private
