@@ -37,3 +37,20 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+  .row.proto-comment
+    %h4.col-md-12 Comments
+    #comment_area.col-md-8
+      .media
+        .media-left
+        .media-body
+    .form-inline
+      %h4 Write a comment
+      .row
+        .form-group.col-md-10
+          =form_tag("/prototypes/#{@prototype.id}/comments", method:  :post, id: "new_comment") do
+            %textarea.textbox{:cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
+        .form-group.col.md-2
+          %input{:type => "submit", :value => "SENT"}/
+
+
+
