@@ -43,14 +43,13 @@
       .media
         .media-left
         .media-body
-    .form-inline
-      %h4 Write a comment
-      .row
-        .form-group.col-md-10
-          =form_tag("/prototypes/#{@prototype.id}/comments", method:  :post, id: "new_comment") do
-            %textarea.textbox{:cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
-        .form-group.col.md-2
-          %input{:type => "submit", :value => "SENT"}/
+  .form-inline
+    %h4.col-md-34 Write a comment
+    .row
+      .form-group.col-md-10
+      =form_tag("/prototypes/#{@prototype.id}/comments", method:  :post, id: "new_comment") do
+        %textarea.textbox{ :name => "comment[text]", :id => "comment_text", :placeholder => "コメントする", :rows => "3"}
+        %input.form-group.col.md-2{:type => "submit", :value => "Comment"}/
 
 
 
