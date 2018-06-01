@@ -2,11 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(content: comment_params[:content], prototype_id: comment_params[:prototype_id]), user_id: current_user.id)
-<<<<<<< Updated upstream
-     redirect_to prototype_path(params[:prtotype_id])
-=======
-    redirect_to prototype_path(params[:prtotype_id])
->>>>>>> Stashed changes
+      redirect_to prototype_path(params[:prtotype_id])
   end
 
   def update
