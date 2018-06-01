@@ -43,6 +43,7 @@
       .media
         .media-left
         .media-body
+<<<<<<< Updated upstream
   .form-inline
     %h4.col-md-34 Write a comment
     .row
@@ -53,3 +54,13 @@
 
 
 
+=======
+    .form-inline
+      %h4 Write a comment
+      .row
+        .form-group.col-md-10
+          =form_tag("/prototypes/#{@prototype.id}/comments", method: :post, id: "new_comment") do
+            %textarea.textbox{:cols => "30", :name => "comment[:content]", :placeholder => "コメントする", :rows => "2"}
+            %input.form-group.col.md-2{:type => "submit", :value => "SENT"}/
+            - binding.pry
+>>>>>>> Stashed changes
