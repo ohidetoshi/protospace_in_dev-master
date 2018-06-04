@@ -13,9 +13,9 @@ class PrototypesController < ApplicationController
   def create
     @prototype = Prototype.new(prototype_params)
     if @prototype.save
-      redirect_to :root, notice: 'New prototype was successfully created'
+      redirect_to :root, notice: '登録出来ました'
     else
-      redirect_to ({ action: 'new' }), alert: 'New prototype was unsuccessfully created'
+      redirect_to ({ action: 'new' }), alert: '登録できません'
      end
   end
 
@@ -34,7 +34,7 @@ class PrototypesController < ApplicationController
   def update
       prototype = Prototype.find(params[:id])
       prototype.update(update_prototype_params) if prototype.user_id == current_user.id
-      redirect_to prototype_path, notice: 'Prototype was successfully edited'
+      redirect_to prototype_path, notice: '編集しました'
   end
 
   private
