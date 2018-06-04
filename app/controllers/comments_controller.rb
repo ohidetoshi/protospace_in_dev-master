@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create(content: comment_params[:content], prototype_id: comment_params[:prototype_id]), user_id: current_user.id)
-      redirect_to prototype_path(params[:prtotype_id])
+    @comment = Comment.new(content: comment_params[:content], prototype_id: comment_params[:prototype_id], user_id: current_user.id)
+    redirect_to prototype_path(@prototype)
   end
 
   def update
@@ -15,4 +15,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.permit(:content, :prototype_id, :user_id)
   end
+
 end
