@@ -1,7 +1,7 @@
 class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :captured_images, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images, allow_destroy: true
 
@@ -22,7 +22,7 @@ class Prototype < ActiveRecord::Base
     created_at.strftime('%b %d %a')
   end
 
-  def liked? (like_user_id, like_prototype_id)
-    likes.where(user_id: like_user_id, prototype_id: like_prototype_id).exists?
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
   end
 end
