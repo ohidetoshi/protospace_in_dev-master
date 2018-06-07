@@ -38,11 +38,16 @@
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
   .row.proto-comment
-    %h4.col-md-12 Comments
+    %h4.col-md-12 Comments(#{@prototype.comments.count})
     #comment_area.col-md-8
       .media
         .media-left
         .media-body
+          - if @comments
+            - @comments.each do |comment|
+              = comment.user.name
+              = comment.content
+              %br
 
     .form-inline
       %h4 Write a comment
