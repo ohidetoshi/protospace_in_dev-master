@@ -39,10 +39,6 @@ class PrototypesController < ApplicationController
 
   private
 
-  def set_prototype
-    @prototype = Prototype.find(params[:id])
-  end
-
   def prototype_params
     params.require(:prototype).permit(
       :title,
@@ -62,4 +58,9 @@ class PrototypesController < ApplicationController
       captured_images_attributes: [:content, :status, :id]
     )
   end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
+  end
+
 end
