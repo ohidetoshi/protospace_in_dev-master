@@ -18,12 +18,14 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
+gem "font-awesome-rails"
 
 group :development, :test do
-  gem 'byebug'
+gem 'byebug'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+gem 'web-console', '~> 2.0'
+gem 'spring'
+gem 'font-awesome-rails'
 end

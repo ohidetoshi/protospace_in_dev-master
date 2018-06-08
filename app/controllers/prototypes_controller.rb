@@ -65,4 +65,5 @@ class PrototypesController < ApplicationController
       captured_images_attributes: [:content, :status, :id]
     )
   end
+
 end
