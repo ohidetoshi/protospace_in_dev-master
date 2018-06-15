@@ -12,9 +12,10 @@
           %h4 Main Thumbnail
           .cover-image-upload#main_image_uploader
             = f.fields_for :captured_images do |image|
-              %img
-              = image.file_field :content, required: true
+              / %img
+              = image.file_field :content, required: true, :class => 'pic'
               = image.hidden_field :status, value: "main"
+            .preview
         .col-md-12
           %h4 Sub Thumbnails
           %ul.proto-sub-list.list-group
@@ -22,9 +23,10 @@
               %li.list-group-item.col-md-4
                 .image-upload
                   = f.fields_for :captured_images do |image|
-                    %img
-                    = image.file_field :content
+                    / %img
+                    = image.file_field :content, :class => 'pic'
                     = image.hidden_field :status, value: "sub"
+                    .preview
       .row.proto-description
         .col-md-12
           %h4 Catch Copy
