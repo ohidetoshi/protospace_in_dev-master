@@ -2,9 +2,9 @@
 
 $(function(){
   $('.pic').change(function(){
-    console.log(this);
+    // console.log(this);
     var index = $('.pic').index(this);
-    console.log(index);
+    // console.log(index);
     $('.pic img').eq(index).remove();
     var file = $(this).prop('files')[0];
     if(!file.type.match('image.*')){
