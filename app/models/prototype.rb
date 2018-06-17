@@ -3,6 +3,8 @@ class Prototype < ActiveRecord::Base
   has_many :captured_images, dependent: :destroy
   has_many :comments
   has_many :likes, dependent: :destroy
+  has_many :tag_names, through: :pro_tag
+  has_many :pro_tags, dependent: :destroy
 
   accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images, allow_destroy: true
 
